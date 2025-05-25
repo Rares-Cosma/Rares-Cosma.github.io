@@ -75,7 +75,7 @@ nav a {
 
 @media (max-width: 768px) {
   nav a {
-    font-size: 0.8rem; /* smaller nav link text on phones */
+    font-size: 0.7rem; /* smaller nav link text on phones */
   }
 }
 
