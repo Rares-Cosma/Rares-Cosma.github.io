@@ -31,6 +31,12 @@ nav a {
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  nav a {
+    font-size: 0.85rem; /* smaller nav link text on phones */
+  }
+}
+
 nav a:hover {
   color: #53ff65;
 }
@@ -65,8 +71,23 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
-#section1 { background-color: #070707; }
-#section2 { background-color: #1c1c1c; }
-#section3 { background-color: #1a1a1a; }
-#section4 { background-color: #0b0b0b; }
-#section5 { background-color: #191919; }
+#section1 {
+  background: linear-gradient(to bottom, #070707, #1a1a1a);
+}
+
+#section2 {
+  background: linear-gradient(to bottom, #1a1a1a, #2c2c2c);
+}
+
+#section3 {
+  background: linear-gradient(to bottom, #2c2c2c, #0b0b0b);
+}
+
+#section4 {
+  background: linear-gradient(to bottom, #0b0b0b, #1e1e1e);
+}
+
+#section5 {
+  background: linear-gradient(to bottom, #1e1e1e, #2a2a2a);
+}
+
