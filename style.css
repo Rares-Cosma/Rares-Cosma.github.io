@@ -171,3 +171,68 @@ nav {
   background: linear-gradient(to bottom, #1e1e1e, #2a2a2a);
 }
 
+/* Container for the whole list */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+/* Individual Publication Item */
+.pub-item {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03); /* Subtle dark card effect */
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover Effect: The "Premium" feel */
+.pub-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(10px); /* Slides slightly to the right */
+  border-color: #00d4ff; /* Optional: adds a technical blue glow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Styling */
+.pub-item i {
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+  color: #ff4d4d; /* Classic PDF Red, or change to match your theme */
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Link/Title Styling */
+.pub-item a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  flex: 1; /* Takes up remaining space */
+}
+
+/* Mobile Tweak: Ensure the title doesn't break layout */
+@media (max-width: 600px) {
+  .pub-item {
+    padding: 1rem;
+  }
+  
+  .pub-item i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .pub-item a {
+    font-size: 0.95rem;
+  }
+}
+
