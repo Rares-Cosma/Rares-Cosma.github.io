@@ -4,8 +4,8 @@
   --bg-card-hover: rgba(255, 255, 255, 0.08);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --accent: #00d4ff;
-  --accent-glow: rgba(0, 212, 255, 0.4);
+  --accent: #00ff66; /* Switched to green */
+  --accent-glow: rgba(0, 255, 102, 0.4);
   --error: #ff4d4d;
 }
 
@@ -81,7 +81,6 @@ nav {
 
 /* --- Page & Typography Sections --- */
 .page {
-  /* Changed from height to min-height so content doesn't overflow on mobile */
   min-height: 100vh; 
   display: flex;
   flex-direction: column;
@@ -116,7 +115,7 @@ a:hover {
   text-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* --- Section Backgrounds (Seamless dark transitions) --- */
+/* --- Section Backgrounds --- */
 #section1 { background: linear-gradient(to bottom, #07090f, #0d111c); }
 #section2 { background: linear-gradient(to bottom, #0d111c, #111827); }
 #section3 { background: linear-gradient(to bottom, #111827, #0f172a); }
@@ -167,7 +166,7 @@ a:hover {
 
 .terminal-body li {
   margin-bottom: 8px;
-  color: #6a8759; /* Hacker green */
+  color: var(--accent); /* Hacker green */
 }
 
 .error-text {
@@ -179,33 +178,31 @@ a:hover {
   font-style: italic;
 }
 
-/* --- Achievements Grid --- */
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px;
+/* --- Achievements List (Changed from pads) --- */
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
   width: 100%;
   margin-top: 2rem;
 }
 
-.achievements-grid p {
+.achievements-list p {
   background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  font-weight: 600;
+  padding: 1.2rem 1.5rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  transition: background 0.3s ease;
 }
 
-.achievements-grid p span {
-  display: block;
-  font-weight: 400;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-top: 5px;
+.achievements-list p:hover {
+  background: var(--bg-card-hover);
 }
 
-/* --- Publications --- */
+/* --- Publications (Clickable, full text, no icon) --- */
 .pub-list {
   display: flex;
   flex-direction: column;
@@ -216,35 +213,25 @@ a:hover {
 }
 
 .pub-item {
-  display: flex;
-  align-items: center;
+  display: block; /* Makes the entire box clickable */
   background: var(--bg-card);
   padding: 1.2rem 1.5rem;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
+  color: var(--text-main);
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .pub-item:hover {
   background: var(--bg-card-hover);
   transform: translateX(8px);
   border-color: var(--accent);
-  box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
-}
-
-.pub-item i {
-  font-size: 1.5rem;
-  margin-right: 1.5rem;
-  color: var(--error);
-  min-width: 30px;
-  text-align: center;
-}
-
-.pub-item a {
-  color: var(--text-main);
-  font-size: 1.05rem;
-  font-weight: 500;
-  flex: 1;
+  box-shadow: 0 5px 20px var(--accent-glow);
+  color: var(--accent);
+  text-shadow: none; /* remove default link glow inside the box */
 }
 
 .more-text {
@@ -309,7 +296,7 @@ a:hover {
 .btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(0, 255, 102, 0.1);
   color: var(--accent);
   border: 1px solid var(--accent);
   border-radius: 8px;
@@ -388,9 +375,5 @@ a:hover {
     border-bottom: 1px solid rgba(255,255,255,0.02);
   }
   
-  .pub-item { padding: 1rem; }
-  .pub-item i { margin-right: 1rem; font-size: 1.2rem; }
-  .pub-item a { font-size: 0.95rem; }
-  
-  .achievements-grid { grid-template-columns: 1fr; }
+  .pub-item { padding: 1rem; font-size: 0.95rem; }
 }
