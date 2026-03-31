@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: Arial, sans-serif;
+  padding-top: 70px; /* adjust to navbar height */
 }
 
 .projects-container {
@@ -61,7 +62,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background: #111; /* Match your background color */
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px); /* 🔥 modern glass effect */
   position: fixed;
   width: 100%;
   top: 0;
@@ -78,6 +80,9 @@ nav {
   color: white;
   font-weight: 500;
   transition: 0.3s;
+}
+.nav-links a:hover {
+  color: #00d4ff;
 }
 
 .menu-toggle {
@@ -114,6 +119,10 @@ nav {
   .nav-links a {
     padding: 15px 0;
     width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: #00d4ff;
   }
 }
 
@@ -235,4 +244,6 @@ nav {
     font-size: 0.95rem;
   }
 }
+
+
 
