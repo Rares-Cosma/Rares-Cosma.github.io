@@ -55,32 +55,66 @@ body {
   line-height: 1.3;
 }
 
+/* --- Base Navigation Styles --- */
 nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #333;
-  z-index: 1000;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #111; /* Match your background color */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-nav a {
-  color: white;
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
   text-decoration: none;
-  font-weight: bold;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --- Mobile Responsive Styles --- */
 @media (max-width: 768px) {
-  nav a {
-    font-size: 0.6rem; /* smaller nav link text on phones */
+  .menu-toggle {
+    display: block; /* Show hamburger on mobile */
   }
-}
-
-nav a:hover {
-  color: #53ff65;
+    
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on your nav height */
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+  
+    /* When JS adds the .active class, show the menu */
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links a {
+    padding: 15px 0;
+    width: 100%;
+  }
 }
 
 .page {
