@@ -30,13 +30,19 @@
 <body>
 
   <nav>
+  <div class="logo">RC</div> <div class="menu-toggle" id="mobile-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="nav-links" id="nav-links">
     <a href="#section1">Home</a>
     <a href="#section2">About</a>
     <a href="#section3">Achievements</a>
     <a href="#section6">Publications</a>
     <a href="#section4">Projects</a>
     <a href="#section5">Contact</a>
-  </nav>
+  </div>
+</nav>
 
   <section id="section1" class="page">
     <h1 data-aos="fade-up">Rareș-Gabriel Cosma</h1>
@@ -174,6 +180,22 @@ Refresh often: this page changes without warning.
 
   <!-- AOS JS and init -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  const mobileMenu = document.querySelector('#mobile-menu');
+  const navLinks = document.querySelector('#nav-links');
+
+  // Toggle the "active" class on click
+  mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Close the menu when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
   <script>
     AOS.init({
       duration: 800, // animation duration
